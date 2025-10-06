@@ -8,4 +8,6 @@ class ApplicationController < ActionController::Base
       name: ENV['BASIC_AUTH_NAME'],
       password: ENV['BASIC_AUTH_PASSWORD']
   end
+  # Only allow modern browsers supporting webp images, web push, badges, import maps, CSS nesting, and CSS :has.
+  allow_browser versions: :modern
 end

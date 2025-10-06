@@ -1,31 +1,30 @@
 <%= form_with(model: [@guest, @plus_one], local: true) do |form| %>
-  <div class="row">
-    <div class="col-md-12">
-      <%= errors_for(@plus_one) %>
-    </div>
+  <div class="mb-4">
+    <%= errors_for(@plus_one) %>
   </div>
 
   <%= render partial: 'guests/name', locals: { form: form, id_stem: 'plus_one' } %>
 
   <%= render partial: 'guests/dietary_preferences', locals: { form: form, id_stem: 'plus_one' } %>
 
-  <div class="form-group row">
-    <div class="offset-md-3 col-md-9">
-      <div class="form-check form-check-inline">
+  <div class="md:flex md:items-center mb-4">
+    <div class="md:w-1/3"></div>
+    <div class="md:w-2/3">
+      <div class="form-check-inline">
         <%= form.check_box :child, id: 'plus_one_child', class: 'form-check-input' %>
         <%= form.label :child, 'Child (12 or under)', class: 'form-check-label' %>
       </div>
     </div>
   </div>
 
-  <div class="row guests-buttons">
-    <div class="col-md-3">
+  <div class="guests-buttons grid grid-cols-1 md:grid-cols-3 items-center">
+    <div>
       <span class="wedding-required">* Required</span>
     </div>
-    <div class="col-md-6 text-center">
+    <div class="text-center">
       <%= form.submit submit_action, class: 'btn btn-primary', data: { disable_with: 'Sending...' } %>
     </div>
-    <div class="col-md-3 text-right">
+    <div class="text-right">
       <%= link_to 'Cancel', guest_plus_ones_path(@guest), class: 'btn btn-secondary' %>
     </div>
   </div>

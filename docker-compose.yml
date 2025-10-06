@@ -1,16 +1,30 @@
-version: '3.7'
-
 services:
   db:
-    image: postgres:10
+    image: postgres:18
     environment:
       POSTGRES_HOST_AUTH_METHOD: trust
     ports:
-      - '5432:5432'
+      - "5432:5432"
+    volumes:
+      - db-data:/var/lib/postgresql/data
 
   web:
     build: .
     ports:
-      - '3000:3000'
-    links:
+      - "3000:3000"
+    environment:
+      - RAILS_ENV=development
+      - NODE_ENV=development
+      - RAILS_LOG_TO_STDOUT=1
+    env_file:
+      - development.env
+    depends_on:
       - db
+    volumes:
+      - .:/rails:cached
+      - bundle:/bundle
+    command: ["bin/dev"]
+
+volumes:
+  db-data:
+  bundle:

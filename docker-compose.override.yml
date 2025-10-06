@@ -1,9 +1,7 @@
-version: '3.7'
-
 services:
   web:
     volumes:
-      - .:/home/app/wedding
+      - .:/rails
       - web_bundle:/usr/local/bundle
     env_file:
       - development.env

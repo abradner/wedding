@@ -18,4 +18,8 @@ class PlusOne < ApplicationRecord
   end
 
   validates :diet, length: { maximum: 8192 }
+
+  def self.ransackable_attributes(auth_object = nil)
+    ["child", "created_at", "diet", "first_name", "guest_id", "id", "last_name", "updated_at"]
+  end
 end

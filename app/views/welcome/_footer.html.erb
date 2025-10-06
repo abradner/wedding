@@ -1,14 +1,10 @@
-<footer id="welcome-index-footer" class="page-footer">
-  <div class="container-fluid">
-    <div class="row">
-      <div id="welcome-index-footer-cta" class="col-md-12 text-center">
-        <%= link_to 'RSVP TODAY!', new_guest_path, class: 'btn btn-primary wedding-cta-btn' %>
-      </div>
+<footer id="welcome-index-footer" class="mt-20 bg-[#faebe3]">
+  <div class="w-full">
+    <div id="welcome-index-footer-cta" class="text-center pt-32 pb-12">
+      <%= link_to 'RSVP TODAY!', new_guest_path, class: 'btn btn-primary wedding-cta-btn' %>
     </div>
-    <div class="row">
-      <div class="col-md-12 text-center" id="welcome-index-footer-credits">
-        <small><% t :photo_credits %></small>
-      </div>
+    <div id="welcome-index-footer-credits" class="text-center pt-20 pb-12">
+      <small class="text-[#1c0d0b]/40"><%= t :photo_credits %></small>
     </div>
   </div>
 </footer>

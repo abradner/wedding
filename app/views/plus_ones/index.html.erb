@@ -1,12 +1,12 @@
-<div class="container">
-  <div class="row">
-    <div class="offset-lg-2 col-lg-8">
+<div class="container-narrow">
+  <div>
+    <div class="md:mx-auto md:w-2/3">
       <%= render partial: 'guests/leader' %>
       <%= render partial: 'guests/rsvp_nav', locals: { active: 2 } %>
 
       <h2>Plus Ones</h2>
-      <p>Please let us know below if you're bringing someone else to the wedding. Children are also very welcome.
-      <p>&nbsp;</p>
+      <p>Please let us know below if you're bringing someone else to the wedding. Children are also very welcome.</p>
+      <p class="my-4">&nbsp;</p>
 
       <% if @plus_ones.any? %>
         <%= render @plus_ones %>
@@ -17,7 +17,7 @@
         <%= link_to 'Add Plus One', new_guest_plus_one_path(@guest), class: 'btn btn-primary', data: { disable_with: 'Loading...' } %>
       </p>
 
-      <p>&nbsp;</p>
+      <p class="my-4">&nbsp;</p>
       <p class="guests-buttons">
         <%= link_to 'Continue', confirm_guest_path(@guest), class: 'btn btn-primary' %>
       </p>

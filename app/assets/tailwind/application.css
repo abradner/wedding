@@ -1,0 +1,51 @@
+@import "tailwindcss";
+
+@layer base {
+  html { font-family: Arvo, Georgia, "Times New Roman", Times, serif; color: rgba(28, 13, 10, 0.7); }
+  h1, h2 { font-family: Montserrat, Helvetica, Arial, sans-serif; color: rgba(28, 13, 10, 0.7); }
+  h1 { font-size: 60px; font-weight: 700; letter-spacing: 0.0833333em; text-transform: uppercase; }
+  h2 { font-size: 28px; font-weight: 700; line-height: 1.5em; letter-spacing: 0.0833333em; text-transform: uppercase; }
+  h2 svg { fill: currentColor; margin: 0 auto; height: 100px; }
+}
+
+@layer components {
+  .container-narrow { @apply mx-auto max-w-4xl px-4; }
+
+  .btn { @apply inline-flex items-center justify-center rounded px-4 py-2 font-semibold tracking-wider transition-colors duration-150 disabled:opacity-50 disabled:cursor-not-allowed; }
+  .btn-primary { color: #fff; background-color: #ff745c; }
+  .btn-primary:hover { background-color: #ff5e41; }
+  .btn-secondary { background-color: #fff; border-width: 1px; border-style: solid; border-color: rgba(28, 13, 11, 0.2); color: #1c0d0b; }
+  .btn-secondary:hover { background-color: #f8f8f8; }
+
+  .form-label, .col-form-label { @apply block text-sm font-medium text-gray-700; }
+  .form-input { @apply block w-full rounded border border-gray-300 px-3 py-2 shadow-sm; }
+  .form-input:focus { outline: none; border-color: #ff745c; box-shadow: 0 0 0 2px rgba(255, 116, 92, 0.4); }
+  .form-textarea { @apply block w-full rounded border border-gray-300 px-3 py-2 shadow-sm; }
+  .form-textarea:focus { outline: none; border-color: #ff745c; box-shadow: 0 0 0 2px rgba(255, 116, 92, 0.4); }
+  .form-help, .form-text { @apply mt-1 text-xs text-gray-500; }
+  .text-muted { @apply text-gray-500; }
+  .form-control { @apply block w-full rounded border border-gray-300 px-3 py-2 shadow-sm; }
+  .form-control:focus { outline: none; border-color: #ff745c; box-shadow: 0 0 0 2px rgba(255, 116, 92, 0.4); }
+  .form-check-input { @apply h-4 w-4 border-gray-300 rounded; accent-color: #ff745c; }
+  .form-check-label { @apply ml-2 text-sm text-gray-700; }
+  .form-check-inline { @apply inline-flex items-center mr-6; }
+
+  .card { @apply rounded border border-gray-200 shadow-sm; }
+  .card-header { @apply rounded-t bg-gray-50 px-4 py-2 font-semibold; }
+  .card-body { @apply p-4; }
+  .card-link { color: #ff745c; }
+  .card-link:hover { text-decoration: underline; }
+
+  .list-unstyled { @apply list-none pl-0; }
+  .nav-link { @apply inline-block rounded px-4 py-2 font-semibold; color: #1c0d0b; }
+  .nav-link.active { background-color: #ff745c; color: #fff; }
+
+  .wedding-cta-btn { @apply tracking-widest px-6 py-3; }
+  .wedding-required { color: #ff745c; }
+
+  .guests-buttons { @apply pt-4 pb-40; }
+  .guests-rsvp-nav { @apply pb-4; }
+
+  .leader-date { @apply text-sm tracking-widest uppercase py-3; }
+  .text-justify { text-align: justify; }
+}

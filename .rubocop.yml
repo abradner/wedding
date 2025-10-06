@@ -1,23 +1,8 @@
-AllCops:
-  Exclude:
-    - 'bin/*'
-    - 'db/schema.rb'
-  NewCops: enable
+# Omakase Ruby styling for Rails
+inherit_gem: { rubocop-rails-omakase: rubocop.yml }
 
-Style/ClassAndModuleChildren:
-  Exclude:
-    - 'test/**/*'
-
-Style/Documentation:
-  Exclude:
-    - 'app/controllers/**/*'
-    - 'app/helpers/**/*'
-    - 'app/mailers/**/*'
-    - 'app/**/application_*'
-    - 'config/*'
-    - 'db/**/*'
-    - 'test/**/*'
-
-Layout/LineLength:
-  Max: 80
-  IgnoredPatterns: ['\A\s*#']
+# Overwrite or add rules to create your own house style
+#
+# # Use `[a, [b, c]]` not `[ a, [ b, c ] ]`
+# Layout/SpaceInsideArrayLiteralBrackets:
+#   Enabled: false

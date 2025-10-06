@@ -26,8 +26,7 @@ class Guest < ApplicationRecord
 
   # Don't allow long or odd names in emails; may be spam.
   def email_safe_salutation
-    return 'Hello,' if
-      first_name.blank? || first_name !~ /\A[\p{Word}\s'-]{1,30}\z/i
+    return 'Hello,' if first_name.blank? || first_name !~ /\A[\p{Word}\s'-]{1,30}\z/i
 
     "Dear #{first_name},"
   end
@@ -41,4 +40,13 @@ class Guest < ApplicationRecord
   scope :confirmed, -> { where.not(confirmed_at: nil) }
   scope :attending, -> { confirmed.where(attending: true) }
   scope :not_attending, -> { confirmed.where(attending: false) }
+
+  def self.ransackable_associations(auth_object = nil)
+    ["plus_ones"]
+  end
+
+  def self.ransackable_attributes(auth_object = nil)
+    %w[attending confirmed_at created_at diet email first_name id last_name notes songs token updated_at]
+  end
+
 end
